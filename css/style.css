@@ -7,6 +7,19 @@ nav {
   z-index: 100;
 }
 
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #89C765;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,10 +38,21 @@ header {
   background-size: cover;
 }
 
+header svg {
+  fill: white;
+}
+
 footer.footer {
-  background: #232323;
+  background: #4d4d4f;
   color: #ddd;
   padding: 2rem 4rem;
+}
+
+.button {
+  background: #89C765;
+  color: white;
+  border: none;
+  font-size: 2rem;
 }
 
 * {
@@ -40,6 +64,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'NanumSquare', sans-serif !important;
 }
 
 ul, ol, dl {
@@ -74,5 +99,9 @@ section ul li {
 section ul li img {
   display: block;
   margin: 0 auto 1rem;
+}
+
+section svg {
+  fill: #89C765;
 }
 /*# sourceMappingURL=style.css.map */
