@@ -1,4 +1,4 @@
-var navMenus = new Vue({
+let navMenus = new Vue({
     el: "#nav-menu",
     data: {
         menus: [
@@ -7,9 +7,19 @@ var navMenus = new Vue({
             { type: 'link', href: 'contact' },
             { type: 'tel', href: '1522-5626' },
         ]
+    },
+    methods: {
+        clicked: function(menu) {
+            if (menu.type !== 'tel') {
+                event.preventDefault();
+                let target = document.getElementById(menu.href);
+                document.documentElement.scrollTop = target.offsetTop - 170; //header height
+            }
+        }
     }
-})
-var panels = new Vue({
+});
+
+let panels = new Vue({
     el: "#panels",
     data: {
         panels: [
@@ -21,4 +31,15 @@ var panels = new Vue({
             { title: '다양한 대회경험 제공', imgId: 'icon-06', text:'전문적인 교육프로그램 이수 후 다양한 축구대회에 참가합니다' },
         ]
     }
-})
+});
+
+
+document.getElementsByTagName('body')[0].onscroll = () => {
+    let nav = document.getElementsByTagName('nav')[0];
+
+    if (window.scrollY > 0) {
+        nav.classList.add('scroll');
+    } else if (window.scrollY == 0) {
+        nav.classList.remove('scroll');
+    };
+};

@@ -25,8 +25,8 @@
             </h1>
             <ul id="nav-menu">
                 <li v-for="menu in menus">
-                    <a v-if="menu.type === 'link'" :href="'#'+menu.href">{{menu.href}}</a>
-                    <a v-if="menu.type === 'tel'" :href="'tel:'+menu.href">{{menu.href}}</a>
+                    <a v-if="menu.type === 'link'" :href="'#'+menu.href" v-on:click="clicked(menu)">{{menu.href}}</a>
+                    <a v-if="menu.type === 'tel'" :href="'tel:'+menu.href" v-on:click="clicked(menu)">{{menu.href}}</a>
                 </li>
             </ul>
         </nav>
@@ -34,7 +34,7 @@
         <!-- content -->
         <div class="content-area">
             <!-- Header -->
-            <header>
+            <header id="home">
                 <h2>No1. Youth Football</h2>
                 <svg>
                     <use xlink:href="#logo-white"></use>

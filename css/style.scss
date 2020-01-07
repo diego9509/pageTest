@@ -26,6 +26,9 @@ html,body {
     height: 100%;
     font-family: 'NanumSquare', sans-serif !important;
 }
+html {
+    scroll-behavior: smooth;
+}
 ul, ol, dl {
     list-style: none;
     padding: 0;
