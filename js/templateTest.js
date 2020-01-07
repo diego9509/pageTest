@@ -1,3 +1,14 @@
+var navMenus = new Vue({
+    el: "#nav-menu",
+    data: {
+        menus: [
+            { type: 'link', href: 'home' },
+            { type: 'link', href: 'about' },
+            { type: 'link', href: 'contact' },
+            { type: 'tel', href: '1522-5626' },
+        ]
+    }
+})
 var panels = new Vue({
     el: "#panels",
     data: {

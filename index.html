@@ -23,11 +23,11 @@
             <h1>
                 <img src="img/logo-text.svg" alt="jeu kid sports club" />
             </h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="tel:1522-5626">1522-5626</a></li>
+            <ul id="nav-menu">
+                <li v-for="menu in menus">
+                    <a v-if="menu.type === 'link'" :href="'#'+menu.href">{{menu.href}}</a>
+                    <a v-if="menu.type === 'tel'" :href="'tel:'+menu.href">{{menu.href}}</a>
+                </li>
             </ul>
         </nav>
 
@@ -52,7 +52,7 @@
                         하루가 멀다하고 짙어지는 미세먼지,
                         일기예보와 다르게 내리는 비,
                         우리는 아이들에게 그러한 걱정 없이 뛰어놀 수 있게 해주고 싶어
-                        실내에서도 마음껏 공을 찰 수 있는 공간을 만들었습니다.
+                        <strong>실내에서도 마음껏 공을 찰 수 있는 공간</strong>을 만들었습니다.
                     </p>
                     <p>
                         유아 축구교육 전문 코치진과
