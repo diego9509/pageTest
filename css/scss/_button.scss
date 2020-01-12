@@ -1,7 +1,9 @@
-.button {
+button.button {
     background: $theme-color;
     color: white;
     border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .75rem;
     cursor: pointer;
 }

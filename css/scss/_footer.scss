@@ -2,16 +2,9 @@ footer.footer {
     background:$bg-color;
     color: #ddd;
     padding: $padding-base;
-    ul {
-        display: flex;
-        justify-content: space-around;
-        align-content: stretch;
-        align-items: stretch;
-        width: 80%;
-        margin: 0 auto;
+    .columns {
         color: $theme-color;
-        li {
-            flex-basis: 33.3%;
+        .column {
             text-align: center;
             border-left: 1px solid $theme-color;
             padding: 1rem 2rem;

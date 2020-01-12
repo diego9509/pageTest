@@ -1,6 +1,6 @@
 nav {
   position: fixed;
-  padding: 0 1rem;
+  padding: 0 1rem 0 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,7 +25,6 @@ nav.scroll {
 
 nav h1 {
   position: relative;
-  top: 2.25rem;
   background: #4d4d4f;
   width: 300px;
   padding: 7rem 1.5rem 2rem;
@@ -44,10 +43,14 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #89C765;
+  color: #333;
   font-weight: bold;
   font-size: 1.25rem;
   line-height: 1.5rem;
+}
+
+nav ul li a.active {
+  color: #89C765;
 }
 
 nav ul li:last-child a {
@@ -96,40 +99,26 @@ footer.footer {
   padding: 4rem 0;
 }
 
-footer.footer ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  width: 80%;
-  margin: 0 auto;
+footer.footer .columns {
   color: #89C765;
 }
 
-footer.footer ul li {
-  -ms-flex-preferred-size: 33.3%;
-      flex-basis: 33.3%;
+footer.footer .columns .column {
   text-align: center;
   border-left: 1px solid #89C765;
   padding: 1rem 2rem;
 }
 
-footer.footer ul li:first-child {
+footer.footer .columns .column:first-child {
   border-left: none;
 }
 
-footer.footer ul li img {
+footer.footer .columns .column img {
   width: 80%;
   margin: 0 auto;
 }
 
-footer.footer ul li p {
+footer.footer .columns .column p {
   text-align: center;
   line-height: 100%;
   font-size: 1.25rem;
@@ -140,11 +129,13 @@ footer.footer p {
   text-align: center;
 }
 
-.button {
+button.button {
   background: #89C765;
   color: white;
   border: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: .75rem;
   cursor: pointer;
 }
 
@@ -247,19 +238,11 @@ section svg {
 }
 
 #about {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 60%;
   margin: 0 auto;
 }
 
 #about img {
   width: 70rem;
-}
-
-#about div {
-  padding-left: 1rem;
 }
 
 #about div h2 {
@@ -272,26 +255,54 @@ section svg {
 
 #contact {
   text-align: center;
+  background-image: url("../img/bottom.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 #contact form {
-  width: 60%;
   margin: 0 auto;
 }
 
-#contact label {
+#contact form > label {
   display: block;
+  text-align: left;
+  font-size: .825rem;
+  margin: .25rem 0 1rem;
+}
+
+#contact form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background: #4d4d4f;
   color: white;
   padding: 1rem 2rem;
-  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#contact label input {
-  width: calc(100% - 60px);
+#contact form div:first-child {
+  margin-bottom: 0;
 }
 
-#contact label textarea {
+#contact form div label {
+  display: inline-block;
+  width: 70px;
+  text-align: right;
+}
+
+#contact form div input,
+#contact form div textarea {
+  width: calc(100% - 90px);
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+#contact textarea {
   resize: none;
 }
 
@@ -320,7 +331,6 @@ section svg {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  width: 60%;
   margin: 0 auto;
 }
 
@@ -357,7 +367,7 @@ section svg {
 }
 
 #info-map {
-  padding-bottom: 0;
+  padding: 4rem;
 }
 
 #info-map #map {

@@ -1,6 +1,6 @@
 nav {
     position: fixed;
-    padding: 0 1rem;
+    padding: 0 1rem 0 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,7 +15,6 @@ nav {
     }
     h1 {
         position: relative;
-        top: 2.25rem;
         background: $bg-color;
         width: 300px;
         padding: 7rem 1.5rem 2rem;
@@ -27,10 +26,13 @@ nav {
             margin-left: 3rem;
             a {
                 text-decoration: none;
-                color: $theme-color;
+                color: #333;
                 font-weight: bold;
                 font-size: 1.25rem;
                 line-height: 1.5rem;
+                &.active {
+                    color: $theme-color;
+                }
             }
             &:last-child {
                 a {

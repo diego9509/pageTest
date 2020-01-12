@@ -79,14 +79,11 @@ section {
     }
 }
 #about {
-    display: flex;
-    width: $container-width;
     margin: 0 auto;
     img {
         width: 70rem;
     }
     div {
-        padding-left: 1rem;
         h2 {
             text-align: left;
         }
@@ -97,22 +94,43 @@ section {
 }
 #contact {
     text-align: center;
+    background-image: url("../img/bottom.jpg");
+    background-size: cover;
+    background-position: center;
     form {
-        width: $container-width;
         margin: 0 auto;
-    }
-    label {
-        display: block;
-        background: $bg-color;
-        color: white;
-        padding: 1rem 2rem;
-        margin-bottom: 1.25rem;
-        input {
-            width: calc(100% - 60px);
+        > label {
+            display: block;
+            text-align: left;
+            font-size: .825rem;
+            margin: .25rem 0 1rem;
         }
-        textarea {
-            resize: none;
+        div {
+            display: flex;
+            background: $bg-color;
+            color: white;
+            padding: 1rem 2rem;
+            margin-top: 1.25rem;
+            justify-content: space-between;
+            &:first-child {
+                margin-bottom: 0;
+            }
+            label {
+                display: inline-block;
+                width: 70px;
+                text-align: right;
+            }
+            input,
+            textarea {
+                width: calc(100% - 90px);
+                border: none;
+                background: transparent;
+                color: white;
+            }
         }
+    }        
+    textarea {
+        resize: none;
     }
     button {
         width: 100%;
@@ -128,7 +146,6 @@ section {
         flex-flow: row wrap;
         align-content: stretch;
         align-items: stretch;
-        width: $container-width;
         margin: 0 auto;
         li {
             width: 33.3%;
@@ -158,7 +175,7 @@ section {
     }
 }
 #info-map {
-    padding-bottom: 0;
+    padding: 4rem;
     #map {
         width: 100%;
         height: 500px;

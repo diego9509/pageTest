@@ -6,7 +6,8 @@ let navMenus = new Vue({
             { type: 'link', href: 'about' },
             { type: 'link', href: 'contact' },
             { type: 'tel', href: '1522-5626' },
-        ]
+        ],
+        
     },
     methods: {
         clicked: function(menu) {

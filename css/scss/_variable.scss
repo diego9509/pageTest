@@ -5,13 +5,9 @@ $padding-base: 4rem 0;
 $container-width: 60%;
 
 @media (max-width: 767px) { //for mobile
-    body {
-        $container-width: 100%;
-    }
+    $container-width: 100%;
 }
 
 @media (max-width: 1023px) {  // for small screen
-    body {
-        $container-width: 80%;
-    }
+    $container-width: 80%;
 }
