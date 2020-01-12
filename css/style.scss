@@ -47,10 +47,12 @@ section {
         position: relative;
         text-align: center;
         margin-top: 0;
+        word-break: keep-all;
     }
     .section-title {
-        font-size: 3.75rem;
+        font-size: 3rem;
         top: 1rem;
+        margin-bottom: 1rem;
         &:before {
             position: absolute;
             top: -5rem;
@@ -200,6 +202,12 @@ section {
         
 }
 @media screen and (max-width: 768px) {//for mobile
+    section .section-title {
+        font-size: 1.5rem;
+        &:before {
+            width: 4px;
+        }
+    }
     #info #panels li {
         margin-bottom: .5rem;
         text-align: left;
@@ -212,7 +220,8 @@ section {
 
             }
             svg {
-                width: 50%;
+                width: 100%;
+                padding: 0 1rem;
             }
         }
     }

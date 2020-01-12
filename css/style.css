@@ -21,6 +21,8 @@ nav {
 
 nav.scroll {
   background: white;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 nav h1 {
@@ -49,6 +51,10 @@ nav ul li a {
   line-height: 1.5rem;
 }
 
+nav ul li a:hover {
+  color: #89C765;
+}
+
 nav ul li a.active {
   color: #89C765;
 }
@@ -58,9 +64,19 @@ nav ul li:last-child a {
 }
 
 header {
+  color: white;
+  min-height: 100%;
+  background-image: url(../img/main_1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+header > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -71,27 +87,16 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  color: white;
-  height: 100%;
-  min-height: 100%;
-  background-image: url(../img/main_1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
-header h2 {
+header > div h2 {
   font-size: 3rem;
 }
 
-header svg {
-  display: block;
+header > div svg {
   fill: white;
   width: 25rem;
   height: 25rem;
-  margin: 0 auto;
 }
 
 footer.footer {
@@ -120,14 +125,19 @@ footer.footer .columns .column img {
 }
 
 footer.footer .columns .column p {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   text-align: center;
   line-height: 100%;
   font-size: 1.25rem;
   word-break: keep-all;
 }
 
-footer.footer p {
+footer.footer > p {
   text-align: center;
+  margin-top: 2rem;
 }
 
 button.button {
@@ -139,6 +149,13 @@ button.button {
   font-weight: bold;
   padding: .75rem;
   cursor: pointer;
+  -webkit-transition: .4s all;
+  transition: .4s all;
+}
+
+button.button:hover {
+  color: white;
+  background: #7bc052;
 }
 
 ::-webkit-scrollbar {
@@ -197,11 +214,13 @@ section .supporting-sentence {
   position: relative;
   text-align: center;
   margin-top: 0;
+  word-break: keep-all;
 }
 
 section .section-title {
-  font-size: 3.75rem;
+  font-size: 3rem;
   top: 1rem;
+  margin-bottom: 1rem;
 }
 
 section .section-title:before {
@@ -397,6 +416,12 @@ section svg {
 }
 
 @media screen and (max-width: 768px) {
+  section .section-title {
+    font-size: 1.5rem;
+  }
+  section .section-title:before {
+    width: 4px;
+  }
   #info #panels li {
     margin-bottom: .5rem;
     text-align: left;
@@ -416,7 +441,8 @@ section svg {
             justify-content: stretch;
   }
   #info #panels li div svg {
-    width: 50%;
+    width: 100%;
+    padding: 0 1rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

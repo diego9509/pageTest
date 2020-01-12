@@ -12,6 +12,7 @@ nav {
     transition: .4s all;
     &.scroll {
         background: white;
+        box-shadow: 0 3px 8px rgba(0,0,0,.12);
     }
     h1 {
         position: relative;
@@ -30,6 +31,9 @@ nav {
                 font-weight: bold;
                 font-size: 1.25rem;
                 line-height: 1.5rem;
+                &:hover {
+                    color: $theme-color;
+                }
                 &.active {
                     color: $theme-color;
                 }

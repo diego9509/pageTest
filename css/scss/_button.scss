@@ -7,4 +7,9 @@ button.button {
     font-weight: bold;
     padding: .75rem;
     cursor: pointer;
+    transition: .4s all;
+    &:hover {
+        color: white;
+        background: darken($theme-color, 5%);
+    }
 }
