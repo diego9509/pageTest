@@ -12,17 +12,15 @@ footer.footer {
                 border-left: none;
             }
             img {
-                width: 80%;
+                width: 50%;
                 margin: 0 auto;
             }
             p {
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);;
                 text-align: center;
                 line-height: 100%;
                 font-size: 1.25rem;
                 word-break: keep-all;
+                padding-top: .5rem;
             }
         }
     }

@@ -25,6 +25,10 @@ html,body {
     padding: 0;
     height: 100%;
     font-family: 'NanumSquare', sans-serif !important;
+    font-weight: 400;
+    color: #333;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 html {
     scroll-behavior: smooth;
@@ -50,19 +54,24 @@ section {
         word-break: keep-all;
     }
     .section-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        font-weight: bold;
         top: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         &:before {
             position: absolute;
             top: -5rem;
             left: 50%;
             margin-left: -3px;
             content:'';
-            width: 6px;
+            width: 4px;
             height: 4rem;
             background: $theme-color;
         }
+    }
+    .container {
+        padding-left: 16rem;
+        padding-right: 16rem;
     }
     ul {
         display: flex;
@@ -81,16 +90,31 @@ section {
     }
 }
 #about {
-    margin: 0 auto;
     img {
-        width: 70rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 20rem;
+        margin: 0 auto;
+    }
+    .container {
+        padding: 0;
     }
     div {
-        h2 {
-            text-align: left;
+        svg {
+            width: 10rem;
+            height: 32px;
+            margin-bottom: 2rem;
         }
         p {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            strong {
+                color: $theme-color;
+            }
+            &.has-margin {
+                margin-bottom: 2rem;
+            }
         }
     }
 }
@@ -158,24 +182,29 @@ section {
         li {
             align-items: stretch;
             padding: 1rem;
-            div {
+            > div {
                 height: 100%;
                 background: white;
                 border-radius: .75rem;
                 h3 {
                     background: $theme-color;
                     color: white;
-                    font-size: 1.5rem;
-                    padding: 1rem;
+                    font-weight: 800;
+                    font-size: 1.25rem;
+                    padding: .5rem 1rem;
                     border-radius: .75rem .75rem 0 0;
                 }
-                svg {
-                    width: 80%;
-                }
-                p {
-                    font-size: 1.25rem;
-                    word-break: keep-all;
-                    padding: 0 1rem;
+                > div {
+                    padding: 1rem .75rem;
+                    svg {
+                        width: 80%;
+                        height: 100px;
+                        margin-bottom: 1rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                        word-break: keep-all;
+                    }
                 }
             }
         }
@@ -193,7 +222,7 @@ section {
     #info #panels li {
         margin-bottom: .5rem;
         div {
-            height: auto;
+            // height: auto;
             svg {
                 width: 50%;
             }

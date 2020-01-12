@@ -1,6 +1,6 @@
 nav {
   position: fixed;
-  padding: 0 1rem 0 4rem;
+  padding: 0 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,6 +64,7 @@ nav ul li:last-child a {
 }
 
 header {
+  position: relative;
   color: white;
   min-height: 100%;
   background-image: url(../img/main_1.jpg);
@@ -73,20 +74,12 @@ header {
 }
 
 header > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 header > div h2 {
@@ -120,19 +113,16 @@ footer.footer .columns .column:first-child {
 }
 
 footer.footer .columns .column img {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
 }
 
 footer.footer .columns .column p {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   text-align: center;
   line-height: 100%;
   font-size: 1.25rem;
   word-break: keep-all;
+  padding-top: .5rem;
 }
 
 footer.footer > p {
@@ -186,6 +176,10 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'NanumSquare', sans-serif !important;
+  font-weight: 400;
+  color: #333;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -218,9 +212,10 @@ section .supporting-sentence {
 }
 
 section .section-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
   top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 section .section-title:before {
@@ -229,9 +224,14 @@ section .section-title:before {
   left: 50%;
   margin-left: -3px;
   content: '';
-  width: 6px;
+  width: 4px;
   height: 4rem;
   background: #89C765;
+}
+
+section .container {
+  padding-left: 16rem;
+  padding-right: 16rem;
 }
 
 section ul {
@@ -258,20 +258,36 @@ section svg {
   fill: #89C765;
 }
 
-#about {
+#about img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  width: 20rem;
   margin: 0 auto;
 }
 
-#about img {
-  width: 70rem;
+#about .container {
+  padding: 0;
 }
 
-#about div h2 {
-  text-align: left;
+#about div svg {
+  width: 10rem;
+  height: 32px;
+  margin-bottom: 2rem;
 }
 
 #about div p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+}
+
+#about div p strong {
+  color: #89C765;
+}
+
+#about div p.has-margin {
+  margin-bottom: 2rem;
 }
 
 #contact {
@@ -370,28 +386,34 @@ section svg {
   padding: 1rem;
 }
 
-#info #panels li div {
+#info #panels li > div {
   height: 100%;
   background: white;
   border-radius: .75rem;
 }
 
-#info #panels li div h3 {
+#info #panels li > div h3 {
   background: #89C765;
   color: white;
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  padding: .5rem 1rem;
   border-radius: .75rem .75rem 0 0;
 }
 
-#info #panels li div svg {
-  width: 80%;
+#info #panels li > div > div {
+  padding: 1rem .75rem;
 }
 
-#info #panels li div p {
-  font-size: 1.25rem;
+#info #panels li > div > div svg {
+  width: 80%;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+#info #panels li > div > div p {
+  font-size: 1rem;
   word-break: keep-all;
-  padding: 0 1rem;
 }
 
 #info-map {
@@ -406,9 +428,6 @@ section svg {
 @media screen and (min-width: 1024px) {
   #info #panels li {
     margin-bottom: .5rem;
-  }
-  #info #panels li div {
-    height: auto;
   }
   #info #panels li div svg {
     width: 50%;
