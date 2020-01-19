@@ -25,12 +25,33 @@ nav.scroll {
           box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
+nav.scroll h1 {
+  width: auto;
+  background: transparent;
+  padding: 1rem;
+}
+
+nav.scroll h1 img {
+  position: relative;
+  top: .5rem;
+  width: auto;
+  height: 2rem;
+}
+
 nav h1 {
+  -webkit-transition: .4s all;
+  transition: .4s all;
   position: relative;
   background: #4d4d4f;
   width: 300px;
   padding: 7rem 1.5rem 2rem;
   margin: 0;
+}
+
+nav h1 img {
+  -webkit-transition: .4s all;
+  transition: .4s all;
+  width: 100%;
 }
 
 nav ul {
