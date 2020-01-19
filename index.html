@@ -13,6 +13,7 @@
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2fe6374fca8d6efb2f03eda282816f8d"></script>
 
         <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
         <link href="css/style.css" rel="stylesheet">
         <link href="css/bulma.min.css" rel="stylesheet">
 
@@ -26,7 +27,7 @@
             </h1>
             <ul id="nav-menu">
                 <li v-for="menu in menus">
-                    <a v-if="menu.type === 'link'" :href="'#'+menu.href" v-on:click="clicked(menu)" v-bind:class="{ active: isActive }">{{menu.href}}</a>
+                    <a v-if="menu.type === 'link'" :href="'#'+menu.href" :data-scroll="menu.href" v-on:click="clicked(menu)">{{menu.href}}</a>
                     <a v-if="menu.type === 'tel'" :href="'tel:'+menu.href" v-on:click="clicked(menu)">{{menu.href}}</a>
                 </li>
             </ul>
@@ -35,14 +36,14 @@
         <!-- content -->
         <div class="content-area">
             <!-- Header -->
-            <header id="home">
+            <section id="home">
                 <div>
                     <h2>No1. Youth Football</h2>
                     <svg>
                         <use xlink:href="#logo-white"></use>
                     </svg>
                 </div>
-            </header>
+            </section>
 
             <section id="about">
                 <div class="container">

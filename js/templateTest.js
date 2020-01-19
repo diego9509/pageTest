@@ -13,8 +13,10 @@ let navMenus = new Vue({
         clicked: function(menu) {
             if (menu.type !== 'tel') {
                 event.preventDefault();
+                $('#nav-menu li a').removeClass('active');
                 let target = document.getElementById(menu.href);
-                document.documentElement.scrollTop = target.offsetTop - 170; //header height
+                document.documentElement.scrollTop = target.offsetTop - 64; //header height
+                $(this).addClass('active');
             }
         }
     }
@@ -34,13 +36,33 @@ let panels = new Vue({
     }
 });
 
+function findPosition(){
+    let link = $('#nav-menu li a');
+
+    $('section').each(function(){
+        if( ($(this).offset().top - $(window).scrollTop() ) <= 64) {
+            link.removeClass('active');
+            $('#nav-menu').find('[data-scroll="'+ $(this).attr('id') +'"]').addClass('active');
+        }
+    });
+}
+
+$( document ).ready(function() {
+    findPosition();
+    // $('#nav-menu li:first-child a').addClass('active');
+});
 
 document.getElementsByTagName('body')[0].onscroll = () => {
     let nav = document.getElementsByTagName('nav')[0];
 
     if (window.scrollY > 0) {
         nav.classList.add('scroll');
+    
+        findPosition();
+
     } else if (window.scrollY == 0) {
+
         nav.classList.remove('scroll');
+
     };
 };
