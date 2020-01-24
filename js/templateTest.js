@@ -36,6 +36,17 @@ let panels = new Vue({
     }
 });
 
+let infraPanels = new Vue({
+    el: "#infraPanels",
+    data: {
+        panels: [
+            { title: '안전한 실내구장', imgSrc: 'img/infra_01-min.png', text: '00평 규모의 대형 실내구장에서 안전한 설비로 아이들은 마음껏 뛰어놀 수 있습니다' },
+            { title: '카페 라운지', imgSrc: 'img/infra_02-min.png', text: '아이들이 학습하는 동안 학부모님들이 쉴 수 있는 공간을 마련하였습니다' },
+            { title: '셔틀버스 운영', imgSrc: 'img/infra_03-min.png', text: '안전한 이동을 위하여 전용 셔틀버스를 운영합니다.' },
+        ]
+    }
+});
+
 function findPosition() {
     let link = $('#nav-menu li a');
 
@@ -94,7 +105,23 @@ $(document).ready(function () {
         arrows: false,
         fade: true,
     });
-    // $('#nav-menu li:first-child a').addClass('active');
+    $('nav button').click(function(){
+        $('nav ul').toggleClass('open');
+    })
+    // $('nav ul li a').click(function(){
+    //     let type = $(this).attr('type');
+    //     let href = $(this).attr('href');
+    //     href = href.replace(/#/,"");
+    //     console.log(type);
+    //     console.log(href);
+    //     if (type !== 'tel') {
+    //         event.preventDefault();
+    //         $('#nav-menu li a').removeClass('active');
+    //         let target = document.getElementById(href);
+    //         document.documentElement.scrollTop = target.offsetTop - 64; //header height
+    //         $(this).addClass('active');
+    //     }
+    // })
 });
 
 document.getElementsByTagName('body')[0].onscroll = () => {
