@@ -577,7 +577,7 @@ section svg {
     overflow-x: hidden;
   }
   nav {
-    height: 2rem;
+    height: 4rem;
     padding: 0 1rem;
     background: white;
   }
@@ -594,7 +594,7 @@ section svg {
   }
   nav ul {
     position: absolute;
-    top: 2rem;
+    top: 4rem;
     left: 0;
     width: 100%;
     display: block;
@@ -617,7 +617,10 @@ section svg {
   }
   nav button {
     display: block;
-    width: 1.5rem;
+    width: 2rem;
+  }
+  nav button svg {
+    width: 2rem;
   }
   section .container {
     padding-left: 1rem;

@@ -287,7 +287,7 @@ section {
         overflow-x: hidden;
     }
     nav {
-        height: 2rem;
+        height: 4rem;
         padding: 0 1rem;
         background: white;
         h1 {
@@ -301,7 +301,7 @@ section {
         }
         ul {
             position: absolute;
-            top: 2rem;
+            top: 4rem;
             left: 0;
             width: 100%;
             display: block;
@@ -323,8 +323,10 @@ section {
         }
         button {
             display: block;
-            width: 1.5rem;
-            
+            width: 2rem;
+            svg {
+                width: 2rem;
+            }
         }
     }
     section {

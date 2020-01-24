@@ -12,7 +12,7 @@ let navMenus = new Vue({
     methods: {
         clicked: function (menu) {
             if (menu.type !== 'tel') {
-                event.preventDefault();
+                // event.preventDefault();
                 $('#nav-menu li a').removeClass('active');
                 let target = document.getElementById(menu.href);
                 document.documentElement.scrollTop = target.offsetTop - 64; //header height
