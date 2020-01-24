@@ -12,8 +12,16 @@
 
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2fe6374fca8d6efb2f03eda282816f8d"></script>
 
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+        <script data-cfasync="false" type="text/javascript"
+                src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+
         <link href="css/style.css" rel="stylesheet">
         <link href="css/bulma.min.css" rel="stylesheet">
 
@@ -40,11 +48,17 @@
         <div class="content-area">
             <!-- Header -->
             <section id="home">
-                <div>
+                <div class="title">
                     <h2>No1. Youth Football</h2>
                     <svg>
                         <use xlink:href="#logo-white"></use>
                     </svg>
+                </div>
+                <div class="layer"></div>
+                <div class="carousel">
+                    <div class="img1"></div>
+                    <div class="img2"></div>
+                    <div class="img3"></div>
                 </div>
             </section>
 
@@ -95,28 +109,36 @@
             <section id="contact">
                 <h2><strong>쥬키즈 스포츠</strong>에 궁금한 점을 물어보세요!</h2>
                 <div class="container">
-                    <form>
+                    <form class="gform" method="POST" 
+                        action="https://script.google.com/macros/s/AKfycbzImA0vfHOiXlaAZWsFQ6dc-NAlfWv4O5Xrd4BiSA/exec"
+                        >
                         <div>
-                            <label for="form_name">이름</label>
-                            <input id="form_name" type="text" />
+                            <label for="name">이름</label>
+                            <input id="name" name="name" type="text" />
                         </div>
                         <div>
-                            <label for="form_mail">이메일</label>
-                            <input id="form_mail" type="mail" />
+                            <label for="email">이메일</label>
+                            <input id="email" name="email" type="mail" />
                         </div>
                         <div>
-                            <label for="form_contact">연락처</label>
-                            <input id="form_contact" type="phone" />
+                            <label for="contact">연락처</label>
+                            <input id="contact" name="contact" type="phone" />
                         </div>
                         <div>
-                            <label for="form_content">문의내용</label>
-                            <textarea id="form_content" rows="10"></textarea>
+                            <label for="message">문의내용</label>
+                            <textarea id="message" name="message" rows="10"></textarea>
                         </div>
                         <label>
-                            <input type="checkbox" />
+                            <input id="smsyn" type="checkbox" />
                             상담을 위한 개인정보 수집에 동의합니다.
                         </label>
-                        <button class="button" type="submit">보내기</button>
+                        <button type="button" class="button" onclick="fnMemberValidation()">보내기</button>
+                        
+                        <div style="display:none" class="thankyou_message">
+                            <!-- You can customize the thankyou message by editing the code below -->
+                            <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+                            </h2>
+                        </div>
                     </form>
                 </div>
             </section>

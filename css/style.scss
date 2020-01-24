@@ -242,7 +242,14 @@ section {
         overflow-x: hidden;
     }
     nav {
-        display: none;
+        height: 2rem;
+        h1 {
+            padding: 0;
+            width: auto;
+        }
+        ul {
+            align-items: center;
+        }
     }
     section {
         .container {
@@ -260,7 +267,7 @@ section {
         }
     }
     #home {
-        > div {
+        > .title {
             width: 100%;
             h2 {
                 width: 100%;
