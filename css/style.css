@@ -14,7 +14,7 @@ nav {
   width: 100%;
   height: 4rem;
   background: rgba(255, 255, 255, 0.25);
-  z-index: 10;
+  z-index: 15;
   -webkit-transition: .4s all;
   transition: .4s all;
 }
@@ -82,7 +82,7 @@ nav ul li a.active {
 }
 
 nav ul li:last-child a {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 nav button {
@@ -103,15 +103,14 @@ nav button svg {
 
 #home {
   position: relative;
-  color: white;
   min-height: 100%;
+  padding: 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 0;
 }
 
-#home > .title {
+#home .title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -121,12 +120,12 @@ nav button svg {
   z-index: 10;
 }
 
-#home > .title h2 {
+#home .title h2 {
   font-size: 3rem;
   color: white;
 }
 
-#home > .title svg {
+#home .title svg {
   fill: white;
   width: 25rem;
   height: 25rem;
@@ -268,6 +267,10 @@ strong {
   color: #89C765;
 }
 
+p {
+  word-break: keep-all;
+}
+
 .content-area {
   height: 100%;
 }
@@ -364,6 +367,7 @@ section svg {
 }
 
 #contact {
+  position: relative;
   text-align: center;
   background-image: url("../img/contact_back-min.png");
   background-size: cover;
@@ -431,6 +435,58 @@ section svg {
 
 #contact button {
   width: 100%;
+}
+
+#contact .thankyou_message {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#contact .thankyou_message .pop {
+  background: white;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+  border-radius: .75rem;
+  overflow: hidden;
+}
+
+#contact .thankyou_message .pop .header {
+  background: #89C765;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: .5rem 0;
+  text-align: center;
+}
+
+#contact .thankyou_message .pop p {
+  color: #333;
+  padding: 2rem;
+}
+
+#contact .thankyou_message .pop .footer {
+  padding: 0 1rem 1rem;
+  background: transparent;
+}
+
+#contact .thankyou_message .pop .footer .button {
+  width: 50%;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 
 #info {
@@ -558,7 +614,10 @@ section svg {
   height: 500px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  nav ul li {
+    margin-left: 1.5rem;
+  }
   section .container {
     padding-left: 10rem;
     padding-right: 10rem;
@@ -601,8 +660,8 @@ section svg {
     background: white;
     height: 0;
     overflow: hidden;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
   }
   nav ul li {
     display: block;
@@ -616,7 +675,8 @@ section svg {
     display: none;
   }
   nav ul.open {
-    height: 10.5rem;
+    height: 18rem;
+    z-index: 15;
   }
   nav button {
     display: block;
@@ -640,6 +700,7 @@ section svg {
   }
   #home > .title {
     width: 100%;
+    z-index: 7;
   }
   #home > .title h2 {
     width: 100%;
@@ -660,6 +721,8 @@ section svg {
   #about div {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  #about div p {
     font-size: 1rem;
   }
   #info #panels li {
@@ -719,8 +782,11 @@ section svg {
   .footer.footer .columns .column {
     padding: 1rem;
   }
+  .footer.footer .columns .column img {
+    width: 30%;
+  }
   .footer.footer .columns .column p {
-    font-size: 1rem;
+    font-size: .75rem;
     padding-top: .25rem;
   }
   .footer.footer > p {

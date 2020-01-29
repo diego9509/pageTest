@@ -2,16 +2,18 @@ let navMenus = new Vue({
     el: "#nav-menu",
     data: {
         menus: [
-            { type: 'link', href: 'home' },
-            { type: 'link', href: 'about' },
-            { type: 'link', href: 'contact' },
+            { type: 'scroll', name: 'home', href: 'home' },
+            { type: 'scroll', name: 'about', href: 'about' },
+            { type: 'scroll', name: 'contact', href: 'contact' },
+            { type: 'link', name: 'blog', href: 'https://blog.naver.com/jkidson' },
+            { type: 'link', name: 'instagram', href: 'https://www.instagram.com/jeu_kidssports/' },
             { type: 'tel', href: '1522-5626' },
         ],
 
     },
     methods: {
         clicked: function (menu) {
-            if (menu.type !== 'tel') {
+            if (menu.type === 'scroll') {
                 // event.preventDefault();
                 $('#nav-menu li a').removeClass('active');
                 let target = document.getElementById(menu.href);
@@ -40,7 +42,7 @@ let infraPanels = new Vue({
     el: "#infraPanels",
     data: {
         panels: [
-            { title: '안전한 실내구장', imgSrc: 'img/infra_01-min.png', text: '00평 규모의 대형 실내구장에서 안전한 설비로 아이들은 마음껏 뛰어놀 수 있습니다' },
+            { title: '안전한 실내구장', imgSrc: 'img/infra_01-min.png', text: '대형실내와 실외를 겸비한 어린이전용구장' },
             { title: '카페 라운지', imgSrc: 'img/infra_02-min.png', text: '아이들이 학습하는 동안 학부모님들이 쉴 수 있는 공간을 마련하였습니다' },
             { title: '셔틀버스 운영', imgSrc: 'img/infra_03-min.png', text: '안전한 이동을 위하여 전용 셔틀버스를 운영합니다.' },
         ]
@@ -58,7 +60,7 @@ function findPosition() {
     });
 }
 
-function fnMemberValidation(e) {
+function fnMemberValidation() {
     
     if ($('#name').val() === '') {
         alert("성명을 입력하십시오.");
@@ -86,13 +88,20 @@ function fnMemberValidation(e) {
     }
 
     $('.gform').submit();
-    e.preventDefault();
 }
 
-
-function formValidate() {
-    let name = $('#name').value();
+function messageShow() {
+    setTimeout(function(){
+        $('.thankyou_message').show();
+    },200)
+    
 }
+function messageHide() {
+    $('.thankyou_message').hide();
+    $('#name, #email, #contact, #message').val('');
+    $('#smsyn').prop('checked', false);
+}
+
 
 $(document).ready(function () {
     findPosition();
