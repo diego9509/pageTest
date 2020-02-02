@@ -306,6 +306,30 @@ section {
     }
 }
 
+#kakao-talk-channel-chat-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 20;
+    a {
+        img {
+            display: none;
+        }
+        &:before {
+            content: '';
+            display: block;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-image: url('../img/btn_kakao.png');
+            background-size: cover;
+            background-repeat: none;
+            background-position: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,.25);
+        }  
+    }
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1280px) {//for desktop
     nav {
         ul {

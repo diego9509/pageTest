@@ -64,13 +64,13 @@ function findPosition() {
 function fnMemberValidation() {
     
     if ($('#name').val() === '') {
-        alert("성명을 입력하십시오.");
+        alert("성명을 입력해주세요.");
         $('#name').focus();
         return false;
     }
 
     if ($.trim($('#email').val()) == '') {
-        alert("이메일주소를 입력하십시오.");
+        alert("이메일주소를 입력해주세요.");
         $('#email').focus();
         return false;
     } else {
@@ -82,8 +82,20 @@ function fnMemberValidation() {
         }
     }
 
+    if ($('#contact').val() === '') {
+        alert("연락처을 입력해주세요.");
+        $('#contact').focus();
+        return false;
+    }
+
+    if ($('#message').val() === '') {
+        alert("문의내용을 입력해주세요");
+        $('#message').focus();
+        return false;
+    }
+
     if ($('#smsyn').is(':checked') == false) {
-        alert("동의하십시오.");
+        alert("상담을 위한 개인정보 수집에 대한 동의가 필요합니다.");
         $('#smsyn').focus();
         return false;
     }
