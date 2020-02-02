@@ -20,6 +20,7 @@ let navMenus = new Vue({
                 document.documentElement.scrollTop = target.offsetTop - 64; //header height
                 $(this).addClass('active');
             }
+            $('nav ul').removeClass('open');
         }
     }
 });
@@ -117,23 +118,11 @@ $(document).ready(function () {
     $('nav button').click(function(){
         $('nav ul').toggleClass('open');
     })
-    // $('nav ul li a').click(function(){
-    //     let type = $(this).attr('type');
-    //     let href = $(this).attr('href');
-    //     href = href.replace(/#/,"");
-    //     console.log(type);
-    //     console.log(href);
-    //     if (type !== 'tel') {
-    //         event.preventDefault();
-    //         $('#nav-menu li a').removeClass('active');
-    //         let target = document.getElementById(href);
-    //         document.documentElement.scrollTop = target.offsetTop - 64; //header height
-    //         $(this).addClass('active');
-    //     }
-    // })
+
 });
 
 document.getElementsByTagName('body')[0].onscroll = () => {
+    
     let nav = document.getElementsByTagName('nav')[0];
 
     if (window.scrollY > 0) {
@@ -146,4 +135,9 @@ document.getElementsByTagName('body')[0].onscroll = () => {
         nav.classList.remove('scroll');
 
     };
+
 };
+
+document.addEventListener('touchmove', function (e) { 
+    document.getElementById('nav-menu').classList.remove('open');
+}, false);  
