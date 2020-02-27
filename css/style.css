@@ -682,6 +682,7 @@ section svg {
 
 .wrapper article ul li {
   margin-bottom: .25rem;
+  word-break: keep-all;
 }
 
 #kakao-talk-channel-chat-button {
